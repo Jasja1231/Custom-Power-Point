@@ -23,16 +23,18 @@ namespace WPFLAB6
         public Text_slide()
         {
             InitializeComponent();
+     
+
         }
 
         public void set_canvas_back(byte R, byte G, byte B)
         {
             SolidColorBrush brush = new SolidColorBrush(Color.FromArgb(255, R, G, B));
-            canvas.Background = brush;
+            canvas.Background = textBox.Background = titleBox.Background = brush;
         }
 
         public void canvas_height(double height)
-        {
+        {   
             canvas.Height = height;
             canvas.MaxHeight = height;
             canvas.MinHeight = height;

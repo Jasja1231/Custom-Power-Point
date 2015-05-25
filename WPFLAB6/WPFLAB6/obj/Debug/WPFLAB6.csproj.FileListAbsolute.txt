@@ -32,3 +32,24 @@ C:\Users\Home\Documents\Visual Studio 2012\Projects\WPFLAB6\WPFLAB6\obj\Debug\Ti
 C:\Users\Home\Documents\Visual Studio 2012\Projects\WPFLAB6\WPFLAB6\obj\Debug\Picture_slide.g.cs
 C:\Users\Home\Documents\Visual Studio 2012\Projects\WPFLAB6\WPFLAB6\obj\Debug\Text_slide.g.cs
 C:\Users\Home\Documents\Visual Studio 2012\Projects\WPFLAB6\WPFLAB6\obj\Debug\Title_slide.g.cs
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\bin\Debug\WPFLAB6.exe.config
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\WPFLAB6.exe
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\Base_slide.baml
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\MainWindow.baml
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\Picture_slide.baml
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\Text_slide.baml
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\Title_slide.baml
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\Base_slide.g.cs
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\MainWindow.g.cs
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\Picture_slide.g.cs
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\Text_slide.g.cs
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\Title_slide.g.cs
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\App.g.cs
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\WPFLAB6_MarkupCompile.cache
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\WPFLAB6.g.resources
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\WPFLAB6.Properties.Resources.resources
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\WPFLAB6.csproj.GenerateResource.Cache
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\bin\Debug\WPFLAB6.exe
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\bin\Debug\WPFLAB6.pdb
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\WPFLAB6.pdb
+H:\Windows7\Documents\GitHub\Custom-Power-Point\WPFLAB6\WPFLAB6\obj\Debug\WPFLAB6.csprojResolveAssemblyReference.cache

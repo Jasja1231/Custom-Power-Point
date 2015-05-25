@@ -12,7 +12,7 @@
             <Canvas.Background>
                 <SolidColorBrush Color="#892683" />
              </Canvas.Background>
-            <Grid>
+        <Grid Height="400">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -24,8 +24,8 @@
                 
                 
                 <TextBox Name="titleBox" 
-                         Grid.Row="0"
-                        TextWrapping="Wrap" 
+                        Grid.Row="0"
+                        TextWrapping="WrapWithOverflow" 
                         Text="" 
                         TextAlignment="Center"
                         FontSize="35"  
@@ -40,8 +40,7 @@
                         MaxLength="25"
                     />
 
-            <TextBox  
-                    Grid.Row="1"
+            <TextBox  Grid.Row="1"
                     Name="textBox"  
                     AcceptsReturn="True"
                     TextWrapping="Wrap" 
@@ -52,7 +51,7 @@
                     Height="Auto"
                     MaxWidth="550"
                     AcceptsTab="True"
-                        />
+                 />
                 </Grid>
         </Canvas>
 

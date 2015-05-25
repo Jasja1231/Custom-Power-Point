@@ -20,9 +20,9 @@
             </MenuItem>
             <MenuItem Header="Slides">
                 <MenuItem Header="Add Base slide" HorizontalAlignment="Left" Width="183" Click="Base_slide_Click"/>
-                <MenuItem Header="Add Text slide" HorizontalAlignment="Left" Width="183" Click="MenuItem_Click"/>
-                <MenuItem Header="Add Title slide" HorizontalAlignment="Left" Width="183" Click="MenuItem_Click"/>
-                <MenuItem Header="Add Picture slide" HorizontalAlignment="Left" Width="183" Click="MenuItem_Click"/>
+                <MenuItem Header="Add Text slide" HorizontalAlignment="Left" Width="183" Click="Text_slide_Click"/>
+                <MenuItem Header="Add Title slide" HorizontalAlignment="Left" Width="183" Click="Title_slide_Click" />
+                <MenuItem Header="Add Picture slide" HorizontalAlignment="Left" Width="183" Click="Picture_slide_Click" />
             </MenuItem>
         </Menu>
 

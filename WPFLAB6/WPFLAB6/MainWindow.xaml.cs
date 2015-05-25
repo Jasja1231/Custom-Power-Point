@@ -54,28 +54,75 @@ namespace WPFLAB6
             //nothing
         }
 
+
+
+        //Get random integer custed to byte
+        private byte GRB()
+        {
+            int ret = rand.Next(255);
+            return (byte)ret;
+        }
+
         private void Base_slide_Click(object sender, RoutedEventArgs e)
         {
             if (this.scrollView == null)
             {
                 return;
             }
-
-            Picture_slide canvas = new Picture_slide();
-
+            Base_slide canvas = new Base_slide();
             canvas.canvas_height(slide_heigh);
             canvas.canvas_width(slide_width);
-
-
             canvas.set_canvas_back(GRB(),GRB(),GRB());
             //list of user controls for slides
             list.Add(canvas);
             this.stack.Children.Add(canvas);
         }
 
-        private byte GRB() { 
-          int ret =  rand.Next(255);
-          return (byte)ret;
+       
+
+        private void Text_slide_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.scrollView == null)
+            {
+                return;
+            }
+            Text_slide canvas = new Text_slide();
+            canvas.canvas_height(slide_heigh);
+            canvas.canvas_width(slide_width);
+            canvas.set_canvas_back(GRB(), GRB(), GRB());
+            //list of user controls for slides
+            list.Add(canvas);
+            this.stack.Children.Add(canvas);
+        }
+
+        private void Title_slide_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.scrollView == null)
+            {
+                return;
+            }
+            Title_slide canvas = new Title_slide();
+            canvas.canvas_height(slide_heigh);
+            canvas.canvas_width(slide_width);
+            canvas.set_canvas_back(GRB(), GRB(), GRB());
+            //list of user controls for slides
+            list.Add(canvas);
+            this.stack.Children.Add(canvas);
+        }
+
+        private void Picture_slide_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.scrollView == null)
+            {
+                return;
+            }
+            Picture_slide canvas = new Picture_slide();
+            canvas.canvas_height(slide_heigh);
+            canvas.canvas_width(slide_width);
+            canvas.set_canvas_back(GRB(), GRB(), GRB());
+            //list of user controls for slides
+            list.Add(canvas);
+            this.stack.Children.Add(canvas);
         }
  
 

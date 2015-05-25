@@ -28,7 +28,7 @@ namespace WPFLAB6
         public void set_canvas_back(byte R, byte G, byte B)
         {
             SolidColorBrush brush = new SolidColorBrush(Color.FromArgb(255, R, G, B));
-            canvas.Background = brush;
+            canvas.Background = titleBox.Background = brush;
         }
 
         public void canvas_height(double height)

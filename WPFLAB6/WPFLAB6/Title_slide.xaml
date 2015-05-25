@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
-    <Grid>
+    <Grid Height="400">
 
     
         <Canvas Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="550" Height="400">
@@ -13,8 +13,8 @@
                 <SolidColorBrush Color="#FFFF0000" />
             </Canvas.Background>
 
-            <TextBox Name="titleBox" 
-                         Grid.Row="0"
+            <TextBox   Name="titleBox" 
+                        Grid.Row="0"
                         TextWrapping="Wrap" 
                         Text="" 
                         TextAlignment="Center"
@@ -26,23 +26,22 @@
                         AcceptsReturn="True"
                         Height="AUTO"
                         AcceptsTab="True"
-                        MaxLines="1"
-                        MaxLength="25"
-                    />
+                        Canvas.Top="93"
+                        MaxLength="25"/>
 
             <TextBox    Name="subtitleBox" 
-                        TextWrapping="Wrap" 
+                       
+                        TextWrapping="WrapWithOverflow" 
                         Text=""  
                         FontSize="25"  
-                        TextAlignment="Left" 
-                        Canvas.Top="83" 
+                        TextAlignment="Center" 
                         HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
                         Width="550"
                         MaxWidth="550"
                         AcceptsReturn="True"
-                        Height="38"
-                        AcceptsTab="True"
-                          />
+                        Height="Auto"
+                        AcceptsTab="True" Canvas.Top="187"/>
         </Canvas>
 
     </Grid>

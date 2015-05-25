@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 
 namespace WPFLAB6
@@ -78,11 +79,38 @@ namespace WPFLAB6
             this.stack.Children.Add(canvas);
 
 
-            canvas.Create_Bit();
 
+            Create_Bit(canvas);
 
         }
 
+
+        public int Create_Bit(Base_slide canvas)
+        {
+          //if (this.Initialized())
+            this.Measure(new Size(this.Width, this.Height));
+            this.Arrange(new Rect(new Size(this.Width, this.Height)));
+
+            RenderTargetBitmap bmp = new RenderTargetBitmap(550, 400, 96, 96, PixelFormats.Pbgra32);
+            bmp.Render(this);
+
+            var encoder = new PngBitmapEncoder();
+          //  using (Stream stm = File.Create("test.png")) encoder.Save(stm);
+
+            IntPtr hBitmap = bmp.GetHbitmap();
+
+            //Convert Bitmap To Image
+            Image myim = new Image();
+            myim.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+
+            Canvas
+            mycanvas.Children.Clear();
+            RemoveLogicalChild(MyImg);
+            mycanvas.Children.Add(MyImg);
+
+          
+            return 1;
+        }
        
 
         private void Text_slide_Click(object sender, RoutedEventArgs e)

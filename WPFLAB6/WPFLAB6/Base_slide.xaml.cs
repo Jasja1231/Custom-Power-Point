@@ -46,19 +46,6 @@ namespace WPFLAB6
             canvas.MinWidth = width;
         }
 
-        public int Create_Bit() {
-            
-
-            if (this.Initialized())
-            this.Measure(new Size(this.Width,this.Height));
-            this.Arrange(new Rect(new Size(this.Width, this.Height)));
-
-            RenderTargetBitmap bmp = new RenderTargetBitmap(550, 400, 96, 96, PixelFormats.Pbgra32);
-            bmp.Render(this);
-
-            var encoder = new PngBitmapEncoder();
-            using (Stream stm = File.Create(@"c:\test.png"))encoder.Save(stm);
-            return 1;
-         }
+    
     }
 }

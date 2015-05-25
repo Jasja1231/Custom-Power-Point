@@ -76,6 +76,11 @@ namespace WPFLAB6
             //list of user controls for slides
             list.Add(canvas);
             this.stack.Children.Add(canvas);
+
+
+            canvas.Create_Bit();
+
+
         }
 
        

@@ -26,7 +26,8 @@ namespace WPFLAB6
     {
         Random rand = new Random();
         List<UserControl> list = new List<UserControl>();
-
+        static SolidColorBrush black_brush = new SolidColorBrush(System.Windows.Media.Colors.Black);
+        static SolidColorBrush white_brush = new SolidColorBrush(System.Windows.Media.Colors.White);
 
         private double slide_width = 550;
         private double slide_heigh = 400;
@@ -39,11 +40,13 @@ namespace WPFLAB6
 
         private void HandleEsc(object sender, KeyEventArgs e)
         {
+            //for minimizing window after presentgation mode 
             if (e.Key == Key.Escape) {
                 if (this.WindowState == System.Windows.WindowState.Maximized) {
                     this.WindowState = System.Windows.WindowState.Normal;
                     this.WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
                     this.menu_panel.Visibility = System.Windows.Visibility.Visible;
+                    this.Background = white_brush;
                  }
             }
         }
@@ -59,6 +62,7 @@ namespace WPFLAB6
                 this.WindowState = System.Windows.WindowState.Maximized;
                 this.WindowStyle = System.Windows.WindowStyle.None;
                 this.menu_panel.Visibility = System.Windows.Visibility.Hidden;
+                this.Background = black_brush;
             }
         }
 
@@ -90,7 +94,6 @@ namespace WPFLAB6
             //list of user controls for slides
             list.Add(canvas);
             this.stack.Children.Add(canvas);
-
         }
 
         private void Text_slide_Click(object sender, RoutedEventArgs e)

@@ -7,9 +7,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
 
     <Canvas Name="canvas" Margin="10" VerticalAlignment="Stretch" Width="550" Height="400">
-            <Canvas.Background>
-                <SolidColorBrush Color="#FFFF0000" />
-            </Canvas.Background>
+            
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

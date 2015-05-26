@@ -9,10 +9,7 @@
 
     
         <Canvas Margin="10" Name="canvas" Width="550"  Height="400">
-            <Canvas.Background>
-                <SolidColorBrush Color="#FFFF0000" />
-            </Canvas.Background>
-
+            
             <TextBox   Name="titleBox" 
                         Grid.Row="0"
                         TextWrapping="Wrap" 

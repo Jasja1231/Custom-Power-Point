@@ -13,7 +13,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Menu  Height="25" VerticalAlignment="Top" Grid.ColumnSpan="1" >
+        <Menu Name="menu_panel"  Height="25" VerticalAlignment="Top" Grid.ColumnSpan="1" >
             <MenuItem Header="Presentation" Click="Presentation_Click">
                 <MenuItem Header="New Presentation" HorizontalAlignment="Left" Width="191" Margin="0,0,-46,0" Click="NewPresent_Click"/>
                 <MenuItem Header="Show Presentation" HorizontalAlignment="Left" Width="201" Margin="0,0,-56,0" Click="showPresent_Click"/>
@@ -29,7 +29,7 @@
         <ScrollViewer Name="scrollView" Grid.Row ="1" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" >
             <StackPanel Name="stack">
                 <StackPanel.Resources>
-                    <Style TargetType="{x:Type Control}">
+                    <Style TargetType="{x:Type UserControl}">
                         <Setter Property="Margin" Value="10,10,10,10"/>
                     </Style>
 

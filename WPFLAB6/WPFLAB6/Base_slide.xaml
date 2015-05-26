@@ -7,7 +7,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
    
 
-        <Canvas Name="canvas">
+        <Canvas Name="canvas" Margin="10">
             <Canvas.Background>
                 <SolidColorBrush Color="#FFFF0000" />
             </Canvas.Background>

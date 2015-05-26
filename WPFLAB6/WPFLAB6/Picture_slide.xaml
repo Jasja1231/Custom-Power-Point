@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <Canvas Name="canvas"  VerticalAlignment="Stretch" Width="550" Height="400">
+    <Canvas Name="canvas" Margin="10" VerticalAlignment="Stretch" Width="550" Height="400">
             <Canvas.Background>
                 <SolidColorBrush Color="#FFFF0000" />
             </Canvas.Background>

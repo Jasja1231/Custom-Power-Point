@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
-    <Grid Height="400">
+    
 
     
-        <Canvas Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="550" Height="400">
+        <Canvas Margin="10" Name="canvas" Width="550"  Height="400">
             <Canvas.Background>
                 <SolidColorBrush Color="#FFFF0000" />
             </Canvas.Background>
@@ -44,5 +44,4 @@
                         AcceptsTab="True" Canvas.Top="187"/>
         </Canvas>
 
-    </Grid>
 </UserControl>

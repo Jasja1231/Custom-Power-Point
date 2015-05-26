@@ -5,13 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-  
 
 
-        <Canvas Name="canvas" Width="550" Height="400">
-            <Canvas.Background>
-                <SolidColorBrush Color="#892683" />
-             </Canvas.Background>
+
+    <Canvas Name="canvas" Width="550" Height="400" Margin="10">
+            
         <Grid Height="400">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -37,10 +35,9 @@
                         Height="AUTO"
                         AcceptsTab="True"
                         MaxLines="1"
-                        MaxLength="25"
-                    />
+                        MaxLength="25"/>
 
-            <TextBox  Grid.Row="1"
+            <TextBox Grid.Row="1"
                     Name="textBox"  
                     AcceptsReturn="True"
                     TextWrapping="Wrap" 
@@ -50,8 +47,7 @@
                     Width="550"
                     Height="Auto"
                     MaxWidth="550"
-                    AcceptsTab="True"
-                 />
+                    AcceptsTab="True"/>
                 </Grid>
         </Canvas>
 

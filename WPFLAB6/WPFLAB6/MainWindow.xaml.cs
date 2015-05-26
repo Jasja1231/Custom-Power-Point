@@ -34,13 +34,31 @@ namespace WPFLAB6
         public MainWindow()
         {
             InitializeComponent();
+            this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
+        }
+
+        private void HandleEsc(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape) {
+                if (this.WindowState == System.Windows.WindowState.Maximized) {
+                    this.WindowState = System.Windows.WindowState.Normal;
+                    this.WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
+                    this.menu_panel.Visibility = System.Windows.Visibility.Visible;
+                 }
+            }
         }
 
 
         private void showPresent_Click(object sender, RoutedEventArgs e)
         {
-            if (list.Count == 0) {
-                MessageBoxResult error = MessageBox.Show("No slides to show");  
+            if (list.Count == 0)
+            {
+                MessageBoxResult error = MessageBox.Show("No slides to show");
+            }
+            else { 
+                this.WindowState = System.Windows.WindowState.Maximized;
+                this.WindowStyle = System.Windows.WindowStyle.None;
+                this.menu_panel.Visibility = System.Windows.Visibility.Hidden;
             }
         }
 
@@ -50,19 +68,14 @@ namespace WPFLAB6
             this.stack.Children.Clear();
         }
 
-        private void Presentation_Click(object sender, RoutedEventArgs e)
-        {
-            //nothing
-        }
-
-
-
+        
         //Get random integer custed to byte
         private byte GRB()
         {
             int ret = rand.Next(255);
             return (byte)ret;
         }
+
 
         private void Base_slide_Click(object sender, RoutedEventArgs e)
         {
@@ -78,40 +91,7 @@ namespace WPFLAB6
             list.Add(canvas);
             this.stack.Children.Add(canvas);
 
-
-
-            Create_Bit(canvas);
-
         }
-
-
-        public int Create_Bit(Base_slide canvas)
-        {
-          //if (this.Initialized())
-            this.Measure(new Size(this.Width, this.Height));
-            this.Arrange(new Rect(new Size(this.Width, this.Height)));
-
-            RenderTargetBitmap bmp = new RenderTargetBitmap(550, 400, 96, 96, PixelFormats.Pbgra32);
-            bmp.Render(this);
-
-            var encoder = new PngBitmapEncoder();
-          //  using (Stream stm = File.Create("test.png")) encoder.Save(stm);
-
-            IntPtr hBitmap = bmp.GetHbitmap();
-
-            //Convert Bitmap To Image
-            Image myim = new Image();
-            myim.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-
-            Canvas
-            mycanvas.Children.Clear();
-            RemoveLogicalChild(MyImg);
-            mycanvas.Children.Add(MyImg);
-
-          
-            return 1;
-        }
-       
 
         private void Text_slide_Click(object sender, RoutedEventArgs e)
         {
@@ -157,7 +137,13 @@ namespace WPFLAB6
             list.Add(canvas);
             this.stack.Children.Add(canvas);
         }
- 
+
+        private void Presentation_Click(object sender, RoutedEventArgs e)
+        {
+            //nothing
+        }
+
+
 
     }
 }

@@ -26,6 +26,7 @@ namespace WPFLAB6
     {
         Random rand = new Random();
         List<UserControl> list = new List<UserControl>();
+
         static SolidColorBrush black_brush = new SolidColorBrush(System.Windows.Media.Colors.Black);
         static SolidColorBrush white_brush = new SolidColorBrush(System.Windows.Media.Colors.White);
 
@@ -63,6 +64,8 @@ namespace WPFLAB6
                 this.WindowStyle = System.Windows.WindowStyle.None;
                 this.menu_panel.Visibility = System.Windows.Visibility.Hidden;
                 this.Background = black_brush;
+
+
             }
         }
 

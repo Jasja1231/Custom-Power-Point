@@ -154,7 +154,7 @@ namespace WPFLAB6
                     present_list.Add(c);
                     c.MaxHeight = this.Height;
                     c.MaxWidth = this.Width/2;
-          //          c.Margin = new Thickness(0,0,0,0);
+          //c.Margin = new Thickness(0,0,0,0);
                     c.Height = this.Height;
                     c.Width = this.Width/2;
 
@@ -164,8 +164,10 @@ namespace WPFLAB6
                     scrollView.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
                 }
                 
-                this.stack.Children.Clear();
-                this.stack.Children.Add(present_list.ElementAt(0));
+               this.stack.Children.Clear();
+               this.stack.Children.Add(present_list.ElementAt(0));
+
+                
             }
         }
 

@@ -5,20 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-
-    <Canvas Name="canvas" Margin="10" VerticalAlignment="Stretch" MouseLeftButtonDown="canvas_MouseLeftButtonDown">
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBox Name="titleBox" 
+    <Grid>
+        <Canvas Name="canvas" Margin="10" VerticalAlignment="Stretch" MouseLeftButtonDown="canvas_MouseLeftButtonDown">
+                <TextBox Name="titleBox" 
                         Grid.Row="0"
                         
                         Grid.Column="0"
@@ -39,13 +28,10 @@
                 </TextBox.Width>
 
             </TextBox>
-            <Viewbox Name="box" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                <Image Name="image"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-               </Image>
-            </Viewbox>
-        </Grid>
+            <Viewbox Canvas.Top="60" Name="vb"></Viewbox>
         
-    </Canvas>
+           
+        </Canvas>
 
-
+    </Grid>
 </UserControl>

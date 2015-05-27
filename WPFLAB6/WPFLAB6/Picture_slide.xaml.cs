@@ -22,6 +22,8 @@ namespace WPFLAB6
     /// </summary>
     public partial class Picture_slide : UserControl
     {
+       
+
         public Picture_slide()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace WPFLAB6
         public void removeframes()
         {
             this.titleBox.BorderThickness = new Thickness(0);
-            this.image.Focusable = false;
+            //image.Focusable = false;
             this.titleBox.Focusable = false;
         }
 
@@ -64,11 +66,28 @@ namespace WPFLAB6
                 {
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(op.FileName);
-                    bitmap.EndInit();
+
+
+                    //bitmap.UriSource = new Uri(op.FileName);
                     
-                    this.image.Source = bitmap;
-                    this.box.Child = image;
+
+                    
+                    vb.Name = "picture";
+                    vb.MaxHeight = 310;
+                    vb.Width = this.Width;
+                    vb.SetValue(Canvas.TopProperty, 70.00);
+
+                    Image image = new Image();
+                    image.SetValue(Canvas.ZIndexProperty, 10);
+                    image.Source = new BitmapImage(new Uri(op.FileName, UriKind.Absolute));
+                    //bitmap.EndInit();
+
+                   
+
+
+                    vb.Child = image;
+                    vb.Margin = new Thickness(-10) ;
+                    //this.canvas.Children.Add(vb);
                 }
             }
 

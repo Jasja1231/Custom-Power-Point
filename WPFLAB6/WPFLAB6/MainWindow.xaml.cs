@@ -28,6 +28,8 @@ namespace WPFLAB6
         List<UserControl> list = new List<UserControl>();
         List<UserControl> present_list = new List<UserControl>();
 
+        private int position = 0;
+
         static SolidColorBrush black_brush = new SolidColorBrush(System.Windows.Media.Colors.Black);
         static SolidColorBrush white_brush = new SolidColorBrush(System.Windows.Media.Colors.White);
 
@@ -47,9 +49,12 @@ namespace WPFLAB6
 
         private void HandleEsc(object sender, KeyEventArgs e)
         {
-            //for minimizing window after presentgation mode 
-            if (e.Key == Key.Escape) {
-                if (this.WindowState == System.Windows.WindowState.Maximized) {
+            if (this.WindowState == System.Windows.WindowState.Maximized)
+            {
+                //for minimizing window after presentgation mode 
+                if (e.Key == Key.Escape)
+                {
+
                     this.WindowState = System.Windows.WindowState.Normal;
                     this.WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
                     this.menu_panel.Visibility = System.Windows.Visibility.Visible;
@@ -59,22 +64,61 @@ namespace WPFLAB6
 
                     this.stack.Children.Clear();
 
-                    
-                foreach (UserControl c in list)
-                {
-                    c.Height = 400;
-                    c.Width = 550;
-                  
-                    c.IsHitTestVisible = true;
-                    this.stack.Children.Add(c);
+
+                    foreach (UserControl c in present_list)
+                    {
+                        c.Height = 400;
+                        c.Width = 550;
+
+                        c.IsHitTestVisible = true;
+                        this.stack.Children.Add(c);
+                    }
+                    present_list.Clear();
                 }
-                present_list.Clear();
-                 }
+            
+
+                if (e.Key == Key.Left)
+                {
+                    if (position > 0)
+                    {
+                        stack.Children.Clear();
+                        stack.Children.Add(present_list.ElementAt(--position));
+                    }
+
+                }
+
+                if (e.Key == Key.Right) {
+                    if (position < present_list.Count-1) { 
+                        stack.Children.Clear();
+                        stack.Children.Add(present_list.ElementAt(++position));
+                    }
+                    else 
+                        if(position == present_list.Count-1){
+                                this.WindowState = System.Windows.WindowState.Normal;
+                                this.WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
+                                this.menu_panel.Visibility = System.Windows.Visibility.Visible;
+                                scrollView.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
+                                this.Background = white_brush;
+                                this.Cursor = Cursors.Arrow;
+
+                            this.stack.Children.Clear();
 
 
+                            foreach (UserControl c in present_list)
+                            {
+                                c.Height = 400;
+                                c.Width = 550;
+
+                                c.IsHitTestVisible = true;
+                                this.stack.Children.Add(c);
+                            }
+                            present_list.Clear();
+                            position = 0;
+                        }
+                  }
             }
-        }
 
+        }
         //Create list of all user controls ready to present
 
         private void showPresent_Click(object sender, RoutedEventArgs e)
@@ -83,7 +127,8 @@ namespace WPFLAB6
             {
                 MessageBoxResult error = MessageBox.Show("No slides to show");
             }
-            else { 
+            else {
+             //   this.stack.Height = System.Windows.SystemParameters.FullPrimaryScreenHeight;
                 this.WindowState = System.Windows.WindowState.Maximized;
                 this.WindowStyle = System.Windows.WindowStyle.None;
 
@@ -109,7 +154,7 @@ namespace WPFLAB6
                     present_list.Add(c);
                     c.MaxHeight = this.Height;
                     c.MaxWidth = this.Width/2;
-
+          //          c.Margin = new Thickness(0,0,0,0);
                     c.Height = this.Height;
                     c.Width = this.Width/2;
 

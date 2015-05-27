@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+
 
 namespace WPFLAB6
 {
@@ -31,6 +33,15 @@ namespace WPFLAB6
             canvas.Background = titleBox.Background = brush;
         }
 
+
+        public void removeframes()
+        {
+            this.titleBox.BorderThickness = new Thickness(0);
+            this.image.Focusable = false;
+            this.titleBox.Focusable = false;
+        }
+
+
         public void canvas_height(double height)
         {
             this.Height = height;
@@ -40,6 +51,27 @@ namespace WPFLAB6
         public void canvas_width(double width)
         {
             this.Width = width;
+        }
+
+        private void canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                OpenFileDialog op = new OpenFileDialog();
+                op.Title = "Select a picture";
+                op.Filter = "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg";
+                if (op.ShowDialog() == true)
+                {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(op.FileName);
+                    bitmap.EndInit();
+                    
+                    this.image.Source = bitmap;
+                    this.box.Child = image;
+                }
+            }
+
         }
     }
 }

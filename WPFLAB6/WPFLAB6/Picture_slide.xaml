@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <Canvas Name="canvas" Margin="10" VerticalAlignment="Stretch" Width="550" Height="400">
+    <Canvas Name="canvas" Margin="10" VerticalAlignment="Stretch" >
             
         <Grid>
             <Grid.RowDefinitions>
@@ -19,21 +19,26 @@
             </Grid.ColumnDefinitions>
             
             <TextBox Name="titleBox" 
-                         Grid.Row="0"
+                        Grid.Row="0"
+                        
+                        Grid.Column="0"
                         TextWrapping="Wrap" 
                         Text="" 
                         TextAlignment="Center"
                         FontSize="35"  
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
-                        Width="550"
-                        MaxWidth="550"
                         AcceptsReturn="True"
                         Height="AUTO"
                         AcceptsTab="True"
                         MaxLines="1"
-                        MaxLength="25"
-                    />
+                    >
+                <TextBox.Width>
+                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor,
+                            AncestorType={x:Type Canvas}}"/>
+                </TextBox.Width>
+
+            </TextBox>
             </Grid>
         </Canvas>
 

@@ -8,9 +8,9 @@
 
 
 
-    <Canvas Name="canvas" Width="550" Height="400" Margin="10">
+    <Canvas Name="canvas"  Margin="10">
             
-        <Grid Height="400">
+        <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -19,23 +19,29 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                
-                
-                <TextBox Name="titleBox" 
+
+
+            <TextBox Name="titleBox" 
                         Grid.Row="0"
-                        TextWrapping="WrapWithOverflow" 
+                        
+                        Grid.Column="0"
+                        TextWrapping="Wrap" 
                         Text="" 
                         TextAlignment="Center"
                         FontSize="35"  
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
-                        Width="550"
-                        MaxWidth="550"
                         AcceptsReturn="True"
                         Height="AUTO"
                         AcceptsTab="True"
                         MaxLines="1"
-                        MaxLength="25"/>
+                    >
+                <TextBox.Width>
+                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor,
+                            AncestorType={x:Type Canvas}}"/>
+                </TextBox.Width>
+
+            </TextBox>
 
             <TextBox Grid.Row="1"
                     Name="textBox"  
@@ -44,10 +50,13 @@
                     TextAlignment="Left" 
                     HorizontalAlignment="Stretch"
                     FontSize="25"
-                    Width="550"
                     Height="Auto"
-                    MaxWidth="550"
-                    AcceptsTab="True"/>
+                    AcceptsTab="True">
+                <TextBox.Width>
+                <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor,
+                            AncestorType={x:Type Canvas}}"/>
+                </TextBox.Width>
+            </TextBox>
                 </Grid>
         </Canvas>
 

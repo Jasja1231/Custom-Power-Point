@@ -26,6 +26,7 @@ namespace WPFLAB6
     {
         Random rand = new Random();
         List<UserControl> list = new List<UserControl>();
+        List<UserControl> present_list = new List<UserControl>();
 
         static SolidColorBrush black_brush = new SolidColorBrush(System.Windows.Media.Colors.Black);
         static SolidColorBrush white_brush = new SolidColorBrush(System.Windows.Media.Colors.White);
@@ -33,11 +34,16 @@ namespace WPFLAB6
         private double slide_width = 550;
         private double slide_heigh = 400;
 
+        Viewbox box = new Viewbox();
+
         public MainWindow()
         {
             InitializeComponent();
             this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
+            box.Visibility = Visibility.Hidden;
+
         }
+
 
         private void HandleEsc(object sender, KeyEventArgs e)
         {
@@ -47,11 +53,29 @@ namespace WPFLAB6
                     this.WindowState = System.Windows.WindowState.Normal;
                     this.WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
                     this.menu_panel.Visibility = System.Windows.Visibility.Visible;
+                    scrollView.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
                     this.Background = white_brush;
+                    this.Cursor = Cursors.Arrow;
+
+                    this.stack.Children.Clear();
+
+                    
+                foreach (UserControl c in list)
+                {
+                    c.Height = 400;
+                    c.Width = 550;
+                  
+                    c.IsHitTestVisible = true;
+                    this.stack.Children.Add(c);
+                }
+                present_list.Clear();
                  }
+
+
             }
         }
 
+        //Create list of all user controls ready to present
 
         private void showPresent_Click(object sender, RoutedEventArgs e)
         {
@@ -62,10 +86,41 @@ namespace WPFLAB6
             else { 
                 this.WindowState = System.Windows.WindowState.Maximized;
                 this.WindowStyle = System.Windows.WindowStyle.None;
-                this.menu_panel.Visibility = System.Windows.Visibility.Hidden;
+
+                this.menu_panel.Visibility = System.Windows.Visibility.Collapsed;
                 this.Background = black_brush;
 
+                this.Cursor = Cursors.None;
+                
+                //get numb canvases to show from userControl in the list
+               /* UserControl can = list[0];
 
+                can.Background = new SolidColorBrush(System.Windows.Media.Colors.Yellow) ;
+                can.MaxHeight = this.Height;
+                can.MaxWidth = this.Width /1.5;
+                can.Height = this.Height;
+                can.Width = this.Width/1.5;
+
+                this.stack.Children.Add(can);
+                */
+                foreach (UserControl c in stack.Children)
+                {
+
+                    present_list.Add(c);
+                    c.MaxHeight = this.Height;
+                    c.MaxWidth = this.Width/2;
+
+                    c.Height = this.Height;
+                    c.Width = this.Width/2;
+
+                    c.Margin = new Thickness(0,0,0,0);
+
+                    c.IsHitTestVisible = false;
+                    scrollView.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
+                }
+                
+                this.stack.Children.Clear();
+                this.stack.Children.Add(present_list.ElementAt(0));
             }
         }
 
@@ -90,7 +145,7 @@ namespace WPFLAB6
             {
                 return;
             }
-            Base_slide canvas = new Base_slide();
+             Base_slide canvas = new Base_slide();
             canvas.canvas_height(slide_heigh);
             canvas.canvas_width(slide_width);
             canvas.set_canvas_back(GRB(),GRB(),GRB());

@@ -8,25 +8,28 @@
     
 
     
-        <Canvas Margin="10" Name="canvas" Width="550"  Height="400">
-            
-            <TextBox   Name="titleBox" 
+        <Canvas Margin="10" Name="canvas">
+
+        <TextBox Name="titleBox" 
                         Grid.Row="0"
+                        Grid.Column="0"
                         TextWrapping="Wrap" 
                         Text="" 
                         TextAlignment="Center"
                         FontSize="35"  
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
-                        Width="550"
-                        MaxWidth="550"
                         AcceptsReturn="True"
                         Height="AUTO"
                         AcceptsTab="True"
-                        Canvas.Top="93"
-                        MaxLength="25"/>
+                        MaxLines="1">
+            <TextBox.Width>
+                <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor,
+                            AncestorType={x:Type Canvas}}"/>
+            </TextBox.Width>
+        </TextBox>
 
-            <TextBox    Name="subtitleBox" 
+        <TextBox    Name="subtitleBox" 
                        
                         TextWrapping="WrapWithOverflow" 
                         Text=""  
@@ -34,11 +37,16 @@
                         TextAlignment="Center" 
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
-                        Width="550"
-                        MaxWidth="550"
+                        
                         AcceptsReturn="True"
                         Height="Auto"
-                        AcceptsTab="True" Canvas.Top="187"/>
-        </Canvas>
+                        AcceptsTab="True" Canvas.Top="187">
+
+            <TextBox.Width>
+                <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor,
+                            AncestorType={x:Type Canvas}}"/>
+            </TextBox.Width>
+        </TextBox>
+       </Canvas>
 
 </UserControl>

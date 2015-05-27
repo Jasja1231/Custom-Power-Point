@@ -35,17 +35,17 @@ namespace WPFLAB6
         }
 
         public void canvas_height(double height){
-            canvas.Height    = height;
-            canvas.MaxHeight = height;
-            canvas.MinHeight = height;
+            this.Height    = height;
+            
         }
 
         public void canvas_width(double width){
-            canvas.Width    = width;
-            canvas.MaxWidth = width;
-            canvas.MinWidth = width;
+            this.Width    = width;
         }
 
-    
+        public Canvas get_canvas(){
+            return this.canvas;
+        }
+ 
     }
 }
